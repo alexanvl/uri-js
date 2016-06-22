@@ -1,6 +1,7 @@
 ///<reference path="../uri.ts"/>
-if (typeof COMPILED === "undefined" && typeof URI === "undefined" && typeof require === "function")
-    var URI = require("../uri");
+var URI = require("../uri");
+//if (typeof COMPILED === "undefined" && typeof URI === "undefined" && typeof require === "function")
+
 URI.SCHEMES["http"] = URI.SCHEMES["https"] = {
     domainHost: true,
     parse: function (components, options) {
@@ -21,7 +22,7 @@ URI.SCHEMES["http"] = URI.SCHEMES["https"] = {
         }
         //NOTE: We do not parse query strings for HTTP URIs
         //as WWW Form Url Encoded query strings are part of the HTML4+ spec,
-        //and not the HTTP spec. 
+        //and not the HTTP spec.
         return components;
     }
 };
